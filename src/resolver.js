@@ -6,7 +6,7 @@ const db_users = [
 module.exports = {
     Query: {
         users: () => db_users,
-        user: (_, { id }) => db_users.filter( user => user.id == id)
+        user: (_, { id }) => db_users.filter( user => user.id == id)[0]
     },
 
     Mutation: {
@@ -15,7 +15,7 @@ module.exports = {
                 id: 3,
                 name,
                 email
-            })
+            });         
         }
     }
 }
